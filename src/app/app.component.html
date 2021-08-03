@@ -1,0 +1,61 @@
+<div class="container p-3 my-3 border">
+  <!-- Content here -->
+  <h1>Movies application</h1>
+  <div class="container p-2 my-2 border">
+      <h3>Add new</h3>
+
+      <form #moviesForm="ngForm">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Title</label>    
+      <input type="text" class="form-control"id="formGroupExampleInput" name="title" placeholder="Movie Title" required [(ngModel)] = "title">
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="formGroupExampleInput2" class="form-label">Year</label>
+        <input type="number" class="form-control" placeholder="Movie Year" name="year" aria-label="Year" [(ngModel)] = "year">
+      </div>
+      <div class="col">
+        <label for="formGroupExampleInput3" class="form-label">Genres</label>
+        <select class="form-select" name="genres" aria-label="Choose genres" [(ngModel)] = "genres">
+          <option selected>Choose genres</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Horror">Horror</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Romance">Romance</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Western">Western</option>
+        </select>
+      </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">      
+      <button class="btn btn-info my-2" type="submit" (click)="addMovie(moviesForm.value)">Add</button>
+    </div>
+  </form>
+
+  </div>
+
+  <table id="tableSortExample" mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample" scope="col" [mdbTableSort]="moviesList" [sortBy]="headElements[i]">{{head | titlecase}}
+          <mdb-icon fas icon="sort"></mdb-icon>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mv of moviesList; let i = index">
+        <th scope="row">{{mv.id}}</th>
+        <td>{{mv.title}}</td>
+        <td>{{mv.year}}</td>
+        <td>{{mv.genres}}</td>
+        <td><button class="btn" (click)="deleteMovie(mv.id)"><i class="fa fa-trash"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<router-outlet></router-outlet>

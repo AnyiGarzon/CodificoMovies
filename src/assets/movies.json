@@ -1,0 +1,40 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Movie 1",
+      "year": "2010",
+      "genres": "Comedy"
+    },
+    {
+      "id": 2,
+      "title": "Movie 2",
+      "year": "2014",
+      "genres": "Drama"
+    },
+    {
+      "id": 3,
+      "title": "Movie 3",
+      "year": "2012",
+      "genres": "Thriller"
+    },
+    {
+      "id": 4,
+      "title": "Movie 4",
+      "year": "2011",
+      "genres": "Fantasy"
+    },
+    {
+      "id": 5,
+      "title": "Movie 5",
+      "year": "2015",
+      "genres": "Mystery"
+    },
+    {
+      "title": "Movie 6",
+      "year": 1994,
+      "genres": "Mystery",
+      "id": 6
+    }
+  ]
+}
